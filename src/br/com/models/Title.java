@@ -11,7 +11,7 @@ public class Title {
 	public void displayDetails() {
 		System.out.println("Nome do filme: " + name);
 		System.out.println("Ano de lançamento: " + releaseYear);
-		getDuration();
+		getDurationInMinutes();
 	}
 
 	public void evaluate(double grade) {
@@ -43,10 +43,15 @@ public class Title {
 		this.duration = duration;
 	}
 
-	private void getDuration() {
-		int hours = duration / 60;
-		int minutes = duration % 60;
-		System.out.println("Duração: " + hours + " horas e " + minutes + " minutos");
+	public int getDurationInMinutes() {
+return duration;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public int getReleaseYear() {
+		return releaseYear;
+	}
 }
