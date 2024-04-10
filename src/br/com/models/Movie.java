@@ -20,3 +20,4 @@ public class Movie extends Title implements Sortable {
 		return (int)getAverage()/2;
 	}
 }
+

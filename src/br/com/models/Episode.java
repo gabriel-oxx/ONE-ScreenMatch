@@ -54,6 +54,8 @@ public class Episode implements Sortable {
 
 		if (totalViews > 100)
 			return 4;
+		else if (totalViews >= 50)
+			return 3;
 		else
 			return 2;
 	}
