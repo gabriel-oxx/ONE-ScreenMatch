@@ -1,7 +1,8 @@
 package br.com.models;
 
 import br.com.calculations.Sortable;
-import br.com.models.Show;
+
+import java.util.ArrayList;
 
 public class Episode implements Sortable {
 	private int number;
@@ -61,6 +62,3 @@ public class Episode implements Sortable {
 	}
 
 }
-
-
-
