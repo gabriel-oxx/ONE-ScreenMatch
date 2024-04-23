@@ -1,8 +1,10 @@
 package br.com.api;
 
+import br.com.models.OndbTitle;
 import br.com.models.Title;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
-
+import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -24,10 +26,15 @@ public class MainSearch {
 		HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 		String json = response.body();
 		System.out.println(json);
-		Gson gson = new Gson();
-		Title title = gson.fromJson(json, Title.class);
-		System.out.println("Título: " + title.getName());
+		Gson gson = new GsonBuilder()
+				.setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+				.create();
+		//Title title = gson.fromJson(json, Title.class);
+		OndbTitle ondbTitle = gson.fromJson(json, OndbTitle.class);
+		Title title = new Title(ondbTitle);
+		System.out.println(title);
 		input.close();
 	}
 
 }
+
