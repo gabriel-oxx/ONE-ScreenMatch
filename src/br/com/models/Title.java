@@ -1,10 +1,13 @@
 package br.com.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class Title implements Comparable<Title> {
+	@SerializedName("Title")
 	private String name;
-
+	@SerializedName("Year")
 	private int releaseYear;
 
 	private boolean includedInThePlan;
@@ -19,6 +22,12 @@ public class Title implements Comparable<Title> {
 
 		this.name = name;
 		this.releaseYear = releaseYear;
+	}
+
+	public Title(OndbTitle ondbTitle) {
+		this.name = ondbTitle.title();
+		this.releaseYear = Integer.valueOf(ondbTitle.year());
+		this.duration = Integer.valueOf(ondbTitle.runtime().substring(0, 3));
 	}
 
 	public void displayDetails() {
@@ -83,4 +92,13 @@ public class Title implements Comparable<Title> {
 	public int compareTo(Title otherTitle) {
 		return this.getName().compareTo(otherTitle.getName());
 	}
+
+	@Override
+	public String toString() {
+
+		return "Nome: " + name + "\n" + "Ano de lançamento: " + releaseYear +
+				"\n" + "Duração: " + duration + " minutos";
+	}
+
+
 }
