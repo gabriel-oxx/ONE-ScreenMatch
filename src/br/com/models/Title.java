@@ -1,13 +1,14 @@
 package br.com.models;
 
+import br.com.exception.ConversionYearException;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
 public class Title implements Comparable<Title> {
-	@SerializedName("Title")
+
 	private String name;
-	@SerializedName("Year")
+
 	private int releaseYear;
 
 	private boolean includedInThePlan;
@@ -26,6 +27,10 @@ public class Title implements Comparable<Title> {
 
 	public Title(OndbTitle ondbTitle) {
 		this.name = ondbTitle.title();
+
+		if (ondbTitle.year().length() > 4) {
+			throw new ConversionYearException("Não consegui converter o ano porque tem mais de 4 caracteres");
+		}
 		this.releaseYear = Integer.valueOf(ondbTitle.year());
 		this.duration = Integer.valueOf(ondbTitle.runtime().substring(0, 3));
 	}
