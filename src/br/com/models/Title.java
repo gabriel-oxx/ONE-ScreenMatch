@@ -102,7 +102,7 @@ public class Title implements Comparable<Title> {
 	public String toString() {
 
 		return "Nome: " + name + "\n" + "Ano de lançamento: " + releaseYear +
-				"\n" + "Duração: " + duration + " minutos";
+				"\n" + "Duração: " + duration + " minutos\n";
 	}
 
 

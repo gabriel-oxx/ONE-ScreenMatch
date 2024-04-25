@@ -1,0 +1,34 @@
+[
+  {
+    "Name": "Interstellar",
+    "ReleaseYear": 2014,
+    "IncludedInThePlan": false,
+    "SumEvaluation": 0.0,
+    "TotalEvaluations": 0,
+    "Duration": 169
+  },
+  {
+    "Name": "Godzilla",
+    "ReleaseYear": 2014,
+    "IncludedInThePlan": false,
+    "SumEvaluation": 0.0,
+    "TotalEvaluations": 0,
+    "Duration": 123
+  },
+  {
+    "Name": "Spider Man: Lost Cause",
+        "ReleaseYear": 2014,
+    "IncludedInThePlan": false,
+    "SumEvaluation": 0.0,
+    "TotalEvaluations": 0,
+    "Duration": 140
+  },
+  {
+    "Name": "Star Trek",
+    "ReleaseYear": 2009,
+    "IncludedInThePlan": false,
+    "SumEvaluation": 0.0,
+    "TotalEvaluations": 0,
+    "Duration": 127
+  }
+]
